@@ -8,11 +8,12 @@
   },
   "dependencies": {
     "nanoassert": "^2.0.0",
-    "sodium-native": "^3.1.1",
+    "sodium-native": "^3.1.1"
+  },
+  "devDependencies": {
     "standard": "^14.3.4",
     "tape": "^5.0.1"
   },
-  "devDependencies": {},
   "scripts": {
     "pretest": "standard",
     "test": "tape test.js"
