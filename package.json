@@ -1,0 +1,31 @@
+{
+  "name": "secret-blob",
+  "version": "0.0.0",
+  "description": "Tiny module for easy encryption of Buffers",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "nanoassert": "^2.0.0",
+    "sodium-native": "^3.1.1",
+    "standard": "^14.3.4",
+    "tape": "^5.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "pretest": "standard",
+    "test": "tape test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emilbayes/secret-blob.git"
+  },
+  "keywords": [],
+  "author": "Emil Bay <github@tixz.dk>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emilbayes/secret-blob/issues"
+  },
+  "homepage": "https://github.com/emilbayes/secret-blob#readme"
+}
