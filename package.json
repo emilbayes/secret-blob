@@ -3,6 +3,11 @@
   "version": "1.0.1",
   "description": "Tiny module for easy encryption of Buffers",
   "main": "index.js",
+  "bin": {
+    "secret-blob-keygen": "./bin/keygen",
+    "secret-blob-encrypt": "./bin/encrypt",
+    "secret-blob-decrypt": "./bin/decrypt"
+  },
   "publishConfig": {
     "access": "public"
   },

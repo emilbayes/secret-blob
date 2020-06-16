@@ -1,0 +1,14 @@
+#! /usr/bin/env node
+const fs = require('fs')
+const path = require('path')
+const secretBlob = require('..')
+
+const keyString = process.argv[2]
+var ciphertextPath = process.argv[3]
+
+if (ciphertextPath == null || ciphertextPath === '-') ciphertextPath = '/dev/stdin'
+const ciphertext = fs.readFileSync(path.resolve(ciphertextPath))
+
+const key = Buffer.from(keyString, 'base64')
+
+process.stdout.write(secretBlob.decrypt(ciphertext, key))

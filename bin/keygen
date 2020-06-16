@@ -1,0 +1,6 @@
+#! /usr/bin/env node
+const secretBlob = require('..')
+
+const key = secretBlob.keygen()
+
+console.log(key.toString('base64'))
