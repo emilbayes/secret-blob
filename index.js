@@ -14,9 +14,9 @@ function keygen (key) {
 }
 
 function encrypt (plaintext, key, ciphertext) {
-  assert(Buffer.isBuffer(plaintext))
+  assert(plaintext instanceof Uint8Array)
   var clen = encryptLength(plaintext)
-  if (ciphertext == null) ciphertext = Buffer.alloc(clen)
+  if (ciphertext == null) ciphertext = new Uint8Array(clen)
   assert(key.byteLength === KEYBYTES, 'key must be KEYBYTES long')
   assert(ciphertext.byteLength === clen, 'ciphertext must be plaintext + HEADERBYTES long')
 
@@ -34,12 +34,12 @@ function encrypt (plaintext, key, ciphertext) {
 }
 
 function encryptLength (plaintext) {
-  assert(Buffer.isBuffer(plaintext))
+  assert(plaintext instanceof Uint8Array)
   return plaintext.byteLength + HEADERBYTES
 }
 
 function decrypt (ciphertext, key, plaintext) {
-  assert(Buffer.isBuffer(ciphertext))
+  assert(ciphertext instanceof Uint8Array)
   var plen = decryptLength(ciphertext)
   if (plaintext == null) plaintext = sodium.sodium_malloc(plen)
   assert(key.byteLength === KEYBYTES, 'key must be KEYBYTES long')
@@ -54,7 +54,7 @@ function decrypt (ciphertext, key, plaintext) {
 }
 
 function decryptLength (ciphertext) {
-  assert(Buffer.isBuffer(ciphertext))
+  assert(ciphertext instanceof Uint8Array)
   return ciphertext.byteLength - HEADERBYTES
 }
 
